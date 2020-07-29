@@ -1,0 +1,22 @@
+
+version: "3"
+services:
+  db:
+    image: postgres
+    restart: "always"
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_DB: "restapi_dev"
+    volumes:
+      - ../data:/var/lib/postgresql/data/
+  # web:
+  #   image: alphatest
+  #   ports:
+  #     - 5432:5432
+  #   build: .
+  #   restart: on-failure 
+  #   link:
+  #     - "db:localhost"
+
